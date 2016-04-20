@@ -1,0 +1,5 @@
+NUGET
+  remote: http://www.nuget.org/api/v2
+  specs:
+    NUnit (3.2.1)
+    Ookii.Dialogs (1.0)
