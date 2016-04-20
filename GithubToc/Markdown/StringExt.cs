@@ -23,7 +23,7 @@
 
         internal static string EscapeUri(this string text)
         {
-            return new string(EscapedUriCore(text).ToArray());
+            return new string(EscapedUriCore(text).ToArray()).Trim('-');
         }
 
         private static IEnumerable<char> EscapedUriCore(string text)
