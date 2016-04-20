@@ -36,6 +36,16 @@
                     continue;
                 }
 
+                if (c == '&')
+                {
+                    int length;
+                    if (TryEscapeHtmlEntity(text, i, out length))
+                    {
+                        i += length;
+                        continue;
+                    }
+                }
+
                 if (char.IsLetterOrDigit(c))
                 {
                     yield return char.ToLower(c);
@@ -55,6 +65,34 @@
                     yield return '-';
                 }
             }
+        }
+
+        private static bool TryEscapeHtmlEntity(string text, int start, out int length)
+        {
+            if (text[start] != '&')
+            {
+                length = 0;
+                return false;
+            }
+
+            for (int i = start; i < text.Length; i++)
+            {
+                var c = text[i];
+                if (char.IsWhiteSpace(c))
+                {
+                    length = 0;
+                    return false;
+                }
+
+                if (c == ';')
+                {
+                    length = i - start;
+                    return true;
+                }
+            }
+
+            length = 0;
+            return false;
         }
     }
 }

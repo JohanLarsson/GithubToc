@@ -67,6 +67,7 @@
         [TestCase("### 2.1 RoundTrip", "    - [2.1 RoundTrip](#21-roundtrip)")]
         [TestCase("### The options are:", "    - [The options are:](#the-options-are)")]
         [TestCase("## ItemsSource.Array2D & Array2DTransposed", "  - [ItemsSource.Array2D & Array2DTransposed](#itemssourcearray2d--array2dtransposed)")]
+        [TestCase("### 2.2. Translator&lt;T&gt;.", "    - [2.2. Translator&lt;T&gt;.](#22-translatort)")]
         public void ParseRow(string markdown, string expected)
         {
             var headerRow = HeaderRow.Parse(markdown);
