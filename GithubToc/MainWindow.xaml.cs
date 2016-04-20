@@ -9,9 +9,11 @@
     /// </summary>
     public partial class MainWindow : Window
     {
+        private readonly ViewModel viewModel = new ViewModel();
         public MainWindow()
         {
             this.InitializeComponent();
+            this.DataContext = this.viewModel;
         }
 
         private void OnOpenClick(object sender, RoutedEventArgs e)
@@ -21,14 +23,18 @@
             {
                 try
                 {
-                    var toc = TableOfContents.Create(File.ReadAllText(fileDialog.FileName));
-                    this.TocTextBox.Text = toc;
+                    this.viewModel.Source = new Uri(fileDialog.FileName, UriKind.Absolute);
                 }
                 catch (Exception ex)
                 {
-                    this.TocTextBox.Text = ex.Message;
+                    this.viewModel.TableOfContents = ex.Message;
                 }
             }
+        }
+
+        private void OnRefreshClick(object sender, RoutedEventArgs e)
+        {
+            this.viewModel.RefreshAsync();
         }
     }
 }

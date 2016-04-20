@@ -1,4 +1,5 @@
 source http://www.nuget.org/api/v2/
 
 nuget NUnit
+nuget JetBrains.Annotations
 nuget Ookii.Dialogs

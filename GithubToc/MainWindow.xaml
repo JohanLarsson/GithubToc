@@ -7,6 +7,7 @@
         Title="MainWindow"
         Width="525"
         Height="350"
+        d:DataContext="{d:DesignInstance local:ViewModel}"
         mc:Ignorable="d">
     <DockPanel>
         <Menu DockPanel.Dock="Top">
@@ -15,9 +16,32 @@
                           Header="_Open" />
             </MenuItem>
         </Menu>
-        <TextBox x:Name="TocTextBox"
-                 IsReadOnly="True"
-                 IsReadOnlyCaretVisible="True" />
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Column="0"
+                           VerticalAlignment="Center"
+                           Text="Source: " />
+                <TextBox Grid.Column="1" 
+                         Text="{Binding Source}"/>
+                <Button Grid.Column="2"
+                        Click="OnRefreshClick"
+                        Content="Refresh" />
+            </Grid>
+            <TextBox Grid.Row="1"
+                     IsReadOnly="True"
+                     IsReadOnlyCaretVisible="True"
+                     Text="{Binding TableOfContents}" />
+        </Grid>
+
     </DockPanel>
 </Window>
 
