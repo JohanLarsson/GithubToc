@@ -59,9 +59,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Parsing\HeaderRow.cs" />
-    <Compile Include="Parsing\StringExt.cs" />
-    <Compile Include="Parsing\TableOfContents.cs" />
+    <Compile Include="Markdown\HeaderRow.cs" />
+    <Compile Include="Markdown\StringExt.cs" />
+    <Compile Include="Markdown\TableOfContents.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

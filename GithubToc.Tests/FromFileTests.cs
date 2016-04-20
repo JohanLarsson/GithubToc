@@ -66,7 +66,8 @@
         [TestCase("## 1. XmlAssert", "  - [1. XmlAssert](#1-xmlassert)")]
         [TestCase("### 2.1 RoundTrip", "    - [2.1 RoundTrip](#21-roundtrip)")]
         [TestCase("### The options are:", "    - [The options are:](#the-options-are)")]
-        public void TestNameTest(string markdown, string expected)
+        [TestCase("## ItemsSource.Array2D & Array2DTransposed", "  - [ItemsSource.Array2D & Array2DTransposed](#itemssourcearray2d--array2dtransposed)")]
+        public void ParseRow(string markdown, string expected)
         {
             var headerRow = HeaderRow.Parse(markdown);
             Assert.AreEqual(expected, headerRow.ToString());
