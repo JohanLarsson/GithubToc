@@ -3,9 +3,7 @@
     using System;
     using System.ComponentModel;
     using System.IO;
-    using System.Net;
     using System.Runtime.CompilerServices;
-    using System.Threading.Tasks;
 
     using JetBrains.Annotations;
 
@@ -42,16 +40,16 @@
                 if (Equals(value, this.source)) return;
                 this.source = value;
                 this.OnPropertyChanged();
-                this.RefreshAsync();
+                this.Refresh();
             }
         }
 
 
-        public async Task RefreshAsync()
+        public void Refresh()
         {
             try
             {
-                string markdown = null;
+                string markdown;
                 switch (this.Source?.Scheme)
                 {
                     case "http":

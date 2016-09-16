@@ -1,7 +1,6 @@
 ﻿namespace GithubToc
 {
     using System;
-    using System.IO;
     using System.Windows;
 
     /// <summary>
@@ -34,7 +33,7 @@
 
         private void OnRefreshClick(object sender, RoutedEventArgs e)
         {
-            this.viewModel.RefreshAsync();
+            this.viewModel.Refresh();
         }
     }
 }

@@ -1,7 +1,5 @@
 ﻿namespace GithubToc
 {
-    using System.Text.RegularExpressions;
-
     public class HeaderRow
     {
         private string indentation;
