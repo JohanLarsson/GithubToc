@@ -31,7 +31,7 @@
             for (int i = 0; i < text.Length; i++)
             {
                 var c = text[i];
-                if (c == '.')
+                if (c == '.' || c == '(' || c == ')')
                 {
                     continue;
                 }
