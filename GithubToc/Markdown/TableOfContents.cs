@@ -21,7 +21,7 @@
         public static IEnumerable<string> GetHeaders(string markdown)
         {
             return markdown.Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries)
-                                .Where(HeaderRow.IsMarkdownHeaderRow);
+                           .Where(HeaderRow.IsMarkdownHeaderRow);
         }
     }
 }

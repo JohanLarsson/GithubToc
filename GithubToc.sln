@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2047
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GithubToc", "GithubToc\GithubToc.csproj", "{0EE711C6-EE5C-42B5-A507-DB62687E9891}"
 EndProject
@@ -9,7 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GithubToc.Tests", "GithubTo
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{541DE670-156E-48CD-AE00-8619C8ADBFDA}"
 	ProjectSection(SolutionItems) = preProject
-		.paket\paket.bootstrapper.exe = .paket\paket.bootstrapper.exe
 		paket.dependencies = paket.dependencies
 		paket.lock = paket.lock
 		.paket\Readme.paket.md = .paket\Readme.paket.md
@@ -32,5 +31,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8A2FA415-6B07-424C-BE84-5953C3D289BA}
 	EndGlobalSection
 EndGlobal

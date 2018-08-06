@@ -5,8 +5,6 @@
     using System.IO;
     using System.Runtime.CompilerServices;
 
-    using JetBrains.Annotations;
-
     public sealed class ViewModel : INotifyPropertyChanged
     {
         private Uri source;
@@ -17,13 +15,14 @@
 
         public string TableOfContents
         {
-            get
-            {
-                return this.tableOfContents;
-            }
+            get => this.tableOfContents;
             set
             {
-                if (value == this.tableOfContents) return;
+                if (value == this.tableOfContents)
+                {
+                    return;
+                }
+
                 this.tableOfContents = value;
                 this.OnPropertyChanged();
             }
@@ -31,19 +30,19 @@
 
         public Uri Source
         {
-            get
-            {
-                return this.source;
-            }
+            get => this.source;
             set
             {
-                if (Equals(value, this.source)) return;
+                if (Equals(value, this.source))
+                {
+                    return;
+                }
+
                 this.source = value;
                 this.OnPropertyChanged();
                 this.Refresh();
             }
         }
-
 
         public void Refresh()
         {
@@ -71,7 +70,6 @@
                 this.TableOfContents = string.IsNullOrEmpty(markdown)
                                            ? string.Empty
                                            : GithubToc.TableOfContents.Create(markdown);
-
             }
             catch (Exception ex)
             {
@@ -79,7 +77,6 @@
             }
         }
 
-        [NotifyPropertyChangedInvocator]
         private void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

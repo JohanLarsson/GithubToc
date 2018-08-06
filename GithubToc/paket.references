@@ -1,2 +1,9 @@
 Ookii.Dialogs
-JetBrains.Annotations
+
+group Analyzers
+  AsyncUsageAnalyzers
+  Gu.Analyzers
+  IDisposableAnalyzers
+  PropertyChangedAnalyzers
+  StyleCop.Analyzers
+  WpfAnalyzers

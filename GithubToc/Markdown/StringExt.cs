@@ -12,7 +12,7 @@
 
         internal static string EscapeNumber(this string text)
         {
-            var escaped = text.Replace(".", "").Trim();
+            var escaped = text.Replace(".", string.Empty).Trim();
             if (escaped == string.Empty)
             {
                 return string.Empty;
