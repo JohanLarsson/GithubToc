@@ -2,9 +2,9 @@
 {
     public class HeaderRow
     {
-        private string indentation;
-        private string linkText;
-        private string uriText;
+        private readonly string indentation;
+        private readonly string linkText;
+        private readonly string uriText;
 
         public HeaderRow(string indentation, string linkText, string uriText)
         {
@@ -15,8 +15,7 @@
 
         public static HeaderRow Parse(string row)
         {
-            int pos;
-            var indentation = ParseIndentation(row, out pos);
+            var indentation = ParseIndentation(row, out var pos);
             var number = ParseNumber(row, ref pos);
             var text = row.Substring(pos);
             var linkText = number + text;
@@ -36,7 +35,7 @@
 
         private static string ParseIndentation(string row, out int pos)
         {
-            for (int i = 0; i < row.Length; i++)
+            for (var i = 0; i < row.Length; i++)
             {
                 if (row[i] != '#')
                 {

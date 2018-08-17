@@ -28,7 +28,7 @@
 
         private static IEnumerable<char> EscapedUriCore(string text)
         {
-            for (int i = 0; i < text.Length; i++)
+            for (var i = 0; i < text.Length; i++)
             {
                 var c = text[i];
                 if (c == '.' || c == '(' || c == ')')
@@ -38,8 +38,7 @@
 
                 if (c == '&')
                 {
-                    int length;
-                    if (TryEscapeHtmlEntity(text, i, out length))
+                    if (TryEscapeHtmlEntity(text, i, out var length))
                     {
                         i += length;
                         continue;
@@ -75,7 +74,7 @@
                 return false;
             }
 
-            for (int i = start; i < text.Length; i++)
+            for (var i = start; i < text.Length; i++)
             {
                 var c = text[i];
                 if (char.IsWhiteSpace(c))
