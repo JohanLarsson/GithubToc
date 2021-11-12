@@ -12,7 +12,7 @@
     <PackageReference Include="Gu.Analyzers" Version="1.8.5" PrivateAssets="all" />
     <PackageReference Include="IDisposableAnalyzers" Version="3.4.15" PrivateAssets="all" />
     <PackageReference Include="Microsoft.VisualStudio.Threading.Analyzers" Version="17.0.63" PrivateAssets="all" />
-    <PackageReference Include="Ookii.Dialogs.Wpf" Version="4.0.0" />
+    <PackageReference Include="Ookii.Dialogs.Wpf" Version="5.0.0" />
     <PackageReference Include="PropertyChangedAnalyzers" Version="3.2.3" PrivateAssets="all" />
     <PackageReference Include="ReflectionAnalyzers" Version="0.1.21-dev" PrivateAssets="all" />
     <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.113" PrivateAssets="all" />
