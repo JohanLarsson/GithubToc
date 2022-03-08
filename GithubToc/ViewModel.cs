@@ -7,13 +7,12 @@
 
     public sealed class ViewModel : INotifyPropertyChanged
     {
-        private Uri source;
+        private string? tableOfContents;
+        private Uri? source;
 
-        private string tableOfContents;
+        public event PropertyChangedEventHandler? PropertyChanged;
 
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        public string TableOfContents
+        public string? TableOfContents
         {
             get => this.tableOfContents;
             set
@@ -28,7 +27,7 @@
             }
         }
 
-        public Uri Source
+        public Uri? Source
         {
             get => this.source;
             set
@@ -77,7 +76,7 @@
             }
         }
 
-        private void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        private void OnPropertyChanged([CallerMemberName] string? propertyName = null)
         {
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
